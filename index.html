@@ -1,392 +1,65 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REEL 购物网站</title>
+    <title>陈晓雯音乐播放器</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <!-- 顶部导航栏 陈晓雯-->
-    <div class="top-daohang">
-        <a href="#">请先登录</a>
-        <span class="divider">|</span>
-        <a href="#">免费注册</a>
-        <span class="divider">|</span>
-        <a href="#">我的订单</a>
-        <span class="divider">|</span>
-        <a href="#">会员中心</a>
-        <span class="divider">|</span>
-        <a href="#">帮助中心</a>
-        <span class="divider">|</span>
-        <a href="#">在线客服</a>
-        <span class="divider">|</span>
-        <a href="#">📱手机版</a>
-    </div>
 
-    <!-- 陈晓雯 主要内容区域：包含LOGO、导航菜单、搜索框和购物车 -->
-    <div class="white-kuang">
-        <!-- 网站LOGO -->
-        <div class="logo" style="margin-right: 24px; margin-left: 312px;">
-            <img src="./LOGO.png" alt="REEL">
+<body background="./img/bg0.png">
+    <div class="upper-container">
+        <div class="record-container">
+            <div class="record-bg">
+                <div id="record-img" class="rotate-play"></div>
+            </div>
         </div>
-        <!-- 导航菜单和功能区域 -->
-        <div class="icons">
-            <!-- 导航菜单项 -->
-            <span class="icon">陈晓雯</span>
-            <span class="icon">生鲜</span>
-            <span class="icon">美食</span>
-            <span class="icon">餐厨</span>
-            <span class="icon">电器</span>
-            <span class="icon">居家</span>
-            <span class="icon">洗护</span>
-            <span class="icon">孕婴</span>
-            <span class="icon">服装</span>
-            <!-- 搜索框 -->
-            <span class="search-box">
-                <span class="search-icon">&#8981;</span>
-                <input type="text" placeholder="25216950503">
-            </span>
-            <!-- 购物车图标 -->
-            <span class="car">&#128722;</span>
-        </div>
-    </div>
 
-    <!-- 浅色边框大框 - 包裹侧边栏和图片 -->
-    <div class="light-border-container">
-        <!-- 图片区域 -->
-        <div class="banner">
-            <img src="./banner_1.png" alt="中秋">
-        </div>
-        
-        <!-- 侧边栏 -->
-        <div class="cebian">
-            <a href="#">生鲜  <span>水果 蔬菜</span> </a>
-            <a href="#">美食  <span>面点 干果</span> </a>
-            <a href="#">餐厨  <span>数码产品</span> </a>
-            <a href="#">电器  <span>床品 四件套 被枕</span> </a>
-            <a href="#">居家  <span>奶粉 玩具 辅食</span> </a>
-            <a href="#">洗护  <span>洗发 洗护 美妆</span></a>
-            <a href="#">孕婴  <span>奶粉 玩具</span></a>
-            <a href="#">服饰  <span>女装 男装</span></a>
-            <a href="#">杂货  <span>户外 图书</span></a>
-            <a href="#">品牌  <span>品牌制造</span></a>
+        <!-- 右边部分 -->
+        <div class="introduction-container">
+            <div class="text-container">
+                <div class="music-titlt">音乐1</div>
+                <div class="author-container">
+                    作者：陈晓雯
+                    <span class="author-name">25216950503</span>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="bottom-container">
+        <!-- 进度条 -->
+        <audio id="audioTag"></audio>
+        <div class="progress"></div>
+        <!-- 按钮 -->
+        <div class="controls">
+            <div class="timer-container">
+                <span class="played-time">00:00</span>
+                &nbsp;/&nbsp;
+                <span class="audio-time">00:00</span>
+            </div>
+            <div class="center-container">
+                <!-- 播放模式 -->
+                <div class="playMode center-icon"></div>
+                <!-- 上一首 -->
+                <div class="beforeMusic center-icon"></div>
+                <!-- 暂停播放 -->
+                <div class="playPause center-icon"></div>
+                <!-- 下一首 -->
+                <div class="nextMusic center-icon"></div>
+                <div class="volum center-icon"></div>
+                <input type="range" id="volum-togger" value="70" min="0" max="100" step="1" />
+            </div>
+            <div class="right-container">
+                <div id="mv" class="bottom-icon"></div>
+                <!-- 倍速 -->
+                <div id="speed">1.0x</div>
+                <!-- 列表 -->
+                <div id="list" class="bottom-icon"></div>
+            </div>
+        </div>
+    </div>
+    </body>
     
-    <!-- 新鲜好物部分 -->
-    <div class="fresh-container">
-        <div class="container">
-            <div class="section-header">
-                <h1 class="section-title">新鲜好物</h1>
-                <p class="section-subtitle">新鲜出炉 品质靠谱</p>
-                <a href="#" class="view-all">查看全部  ></a>
-            </div>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">新品</span>
-                        <img src="./img/新鲜1.jpg" alt="吸尘器">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">营养无线吸尘器F8</h3>
-                        <div class="product-price">￥899</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">新品</span>
-                       <img src="./img/新2.jpg" alt="空调">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">智能环保3D空调</h3>
-                        <div class="product-price">￥1299</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">新品</span>
-                        <img src="./img/新3.jpg" alt="煲仔饭">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">广东软软糯米煲仔饭</h3>
-                        <div class="product-price">￥129</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <span class="product-badge">新品</span>
-                        <img src="./img/新4.jpg" alt="智能手表">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">罗西机械智能手表</h3>
-                        <div class="product-price">￥3399</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 生鲜部分 -->
-    <div class="fresh-food-container">
-        <!-- 标题栏 -->
-        <div class="header">
-            <div class="header-title">生鲜</div>
-            <div class="header-nav">
-                <a href="#" class="nav-categories">水果&nbsp;&nbsp;&nbsp;&nbsp; 蔬菜&nbsp;&nbsp;&nbsp;&nbsp; 肉禽蛋&nbsp;&nbsp;&nbsp;&nbsp; 裤装&nbsp;&nbsp;&nbsp;&nbsp; 衬衫&nbsp;&nbsp;&nbsp;&nbsp; T恤&nbsp;&nbsp;&nbsp;&nbsp; 内衣</a>
-                <a href="#" class="nav-all">查看全部  ></a>
-            </div>
-        </div>
-
-        <!-- 陈晓雯 原有内容 -->
-        <div class="box">
-            <div class="left">
-                <img src="./img/茅台.png" alt="茅台">
-            </div>
-            <div class="right">
-                <ul>
-                    <li>
-                        <img src="./img/生鲜.jpg" alt="三文鱼">
-                        <div class="product-info">
-                            <div class="product-name">美威 智利原味三文鱼排</div>
-                            <div class="product-desc">240g/袋 4片装</div>
-                            <div class="product-category">海鲜年货</div>
-                            <div class="product-price">￥59</div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="./img/生1.jpg" alt="麻辣小龙虾">
-                        <div class="product-info">
-                            <div class="product-name">红功夫 麻辣小龙虾1.5kg</div>
-                            <div class="product-desc">4-6钱/25-32只</div>
-                            <div class="product-category">火锅食材</div>
-                            <div class="product-price">￥79</div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="./img/生2.jpg" alt="黄花鱼">
-                        <div class="product-info">
-                             <div class="product-name">三都港 冷冻无公害黄花鱼</div>
-                            <div class="product-desc">700g 2条 袋装</div>
-                            <div class="product-category">海鲜水产</div>
-                            <div class="product-price">￥49</div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="./img/生3.jpg" alt="海参">
-                        <div class="product-info">
-                               <div class="product-name">渔公码头 大连鲜食入味</div>
-                            <div class="product-desc">即食海参 辽参刺参</div>
-                            <div class="product-category">调味海</div>
-                            <div class="product-price">￥899</div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="./img/生4.jpg" alt="火龙果">
-                        <div class="product-info">
-                           <div class="product-name">越南白心火龙果4个装</div>
-                            <div class="product-desc">标准果400-550g</div>
-                            <div class="product-category">新鲜水果</div>
-                            <div class="product-price">￥20</div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="./img/生5.jpg" alt="广西沃柑">
-                        <div class="product-info">
-                            <div class="product-name">广西沃柑 新鲜水果</div>
-                            <div class="product-desc">柑橘1.5kg</div>
-                            <div class="product-category">新鲜水果</div>
-                            <div class="product-price">￥20</div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="./img/生6.jpg" alt="牛油果">
-                        <div class="product-info">
-                             <div class="product-name">进口 牛油果 6个装</div>
-                            <div class="product-desc">单果重约130-180g</div>
-                            <div class="product-category">新鲜水果</div>
-                            <div class="product-price">￥50</div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="./img/生7.jpg" alt="山竹">
-                        <div class="product-info">
-                            <div class="product-name">泰国进口山竹5A级</div>
-                            <div class="product-desc">240g/袋 4片装</div>
-                            <div class="product-category">新鲜水果</div>
-                            <div class="product-price">￥60</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 最新专题部分 -->
-    <div class="topics-container">
-        <div class="container">
-            <!-- 标题区域 -->
-            <div class="section-header">
-                <h1 class="section-title">最新专题</h1>
-                <a href="#" class="view-all">查看全部  ></a>
-            </div>
-            
-            <!-- 专题网格布局 -->
-            <div class="topics-grid">
-                <!-- 专题1 -->
-                <div class="topic-card">
-                    <div class="topic-image">
-                        <img src="./img/牛排.jpg" alt="专题图片">
-                        <div class="image-overlay">
-                            <div class="title-left">
-                                <span class="line1">吃这些美食才不算算你自己</span><br>
-                                <span class="line2">餐厨起居洗护好物</span>
-                            </div>
-                            <div class="tag-right">￥29.9起</div>
-                        </div>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="stat-item stat-left">❤️ 232</span>
-                        <span class="stat-item stat-left">👁️ 1800</span>
-                        <span class="stat-item stat-right">💬 89</span>
-                    </div>
-                </div>
-                
-                <!-- 专题2 -->
-                <div class="topic-card">
-                    <div class="topic-image">
-                        <img src="./img/披萨.jpg" alt="专题图片">
-                        <div class="image-overlay">
-                            <div class="title-left">
-                                <span class="line1">吃这些美食才不算算你自己</span><br>
-                                <span class="line2">餐厨起居洗护好物</span>
-                            </div>
-                            <div class="tag-right">￥29.9起</div>
-                        </div>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="stat-item stat-left">❤️ 156</span>
-                        <span class="stat-item stat-left">👁️ 1800</span>
-                        <span class="stat-item stat-right">💬246</span>
-                    </div>
-                </div>
-                
-                <!-- 专题3 -->
-                <div class="topic-card">
-                    <div class="topic-image">
-                        <img src="./img/碗筷.jpg" alt="专题图片">
-                        <div class="image-overlay">
-                            <div class="title-left">
-                                <span class="line1">吃这些美食才不算算你自己</span><br>
-                                <span class="line2">餐厨起居洗护好物</span>
-                            </div>
-                            <div class="tag-right">￥29.9起</div>
-                        </div>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="stat-item stat-left">❤️ 198</span>
-                        <span class="stat-item stat-left">👁️ 1.1k</span>
-                        <span class="stat-item stat-right">💬 74</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 二维码部分 -->
-    <div class="qr-container">
-        <div class="main">
-            <!-- 客户服务 -->
-            <div class="item">
-                <div class="title">客户服务</div>
-                <div class="boxs">
-                    <div class="box">
-                        <img src="./img/客服.png" alt="在线客服">
-                    </div>
-                    <div class="box">
-                        <img src="./img/问题反馈.png" alt="问题反馈">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 关注我们 -->
-            <div class="item">
-                <div class="title">关注我们</div>
-                <div class="boxs">
-                    <div class="box">
-                        <img src="./img/公众号.png" alt="公众号">
-                    </div>
-                    <div class="box">
-                        <img src="./img/微博.png" alt="微博">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 下载APP -->
-            <div class="item">
-                <div class="title">下载APP</div>
-                <div class="content">
-                    <div class="qr">
-                        <img src="./img/二维码.png" alt="扫描二维码">
-                    </div>
-                    <div class="text">
-                        <p>立即下载APP</p>
-                        <a href="#">下载页面</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 服务热线 -->
-            <div class="item line">
-                <div class="title">服务热线</div>
-                <div class="text">
-                    <div class="num">400-0000-000</div>
-                    <p>周一至周日 8:00-18:00</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 页脚部分 -->
-    <div class="footer-container">
-        <div class="wrapper">
-            <div class="top">
-                <ul>
-                    <!-- 通过伪元素添加实现精灵图 -->
-                    <li>
-                        <span>📦  价格亲民</span>
-                    </li>
-                    <li>
-                        <span>🚚  物流快捷</span>
-                    </li>
-                    <li>
-                        <span>👍  品质新鲜</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="bottom">
-                <p>
-                    <a href="#">关于我们</a>
-                    |
-                    <a href="#">帮助中心</a>
-                    |
-                    <a href="#">售后服务</a>
-                    |
-                    <a href="#">配送与验收</a>
-                    |
-                    <a href="#">商务合作</a>
-                    |
-                    <a href="#">搜索推荐</a>
-                    |
-                    <a href="#">友情链接</a>
-                </p>
-                <p>CopyRight @ 小兔鲜儿</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+    </html>
+    <script src="./js/a.js"></script>
